@@ -1,0 +1,15 @@
+flask
+flask-cors
+requests
+beautifulsoup4
+lxml
+pandas
+numpy
+SQLAlchemy
+python-dotenv
+apscheduler
+tweepy>=4.0.0
+fuzzywuzzy[speedup]
+python-Levenshtein
+gunicorn
+praw

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FutFlip Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>body{font-family:Arial,Helvetica,sans-serif;margin:20px}#cards{margin-bottom:20px}table{border-collapse:collapse}td,th{padding:6px;border:1px solid #ddd}#controls{margin-top:10px}</style>
+</head>
+<body>
+  <h1>FutFlip Tracker</h1>
+  <div id="cards">
+    <h2>Tracked Cards</h2>
+    <table id="cards-table"><thead><tr><th>Card ID</th><th>Name</th><th>Platform</th><th>Hype</th><th>Actions</th></tr></thead><tbody></tbody></table>
+    <h3>Add Card</h3>
+    <form id="add-form">
+      <input id="card_id" placeholder="card_id (unique)" required>
+      <input id="name" placeholder="Player name" required>
+      <input id="url" placeholder="Futbin URL" required style="width:420px">
+      <select id="platform"><option value="ps">PS</option><option value="xbox">Xbox</option><option value="pc">PC</option></select>
+      <button type="submit">Add</button>
+    </form>
+
+    <h3>Import CSV</h3>
+    <form id="import-form" enctype="multipart/form-data">
+      <input type="file" id="csvfile" accept=".csv">
+      <button type="submit">Import</button>
+    </form>
+
+    <div id="controls">
+      <button id="start-poll">Start Auto Poll</button>
+      <button id="stop-poll">Stop Auto Poll</button>
+      <span id="scheduler-status"></span>
+    </div>
+  </div>
+
+  <div id="chart-area" style="width:800px;">
+    <h2 id="chart-title">Prices</h2>
+    <canvas id="priceChart" width="800" height="300"></canvas>
+    <div style="margin-top:8px"><button id="refresh-btn">Refresh Price Now</button>
+    <button id="signals-btn">Show Signals</button></div>
+    <pre id="signals-output"></pre>
+  </div>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>
